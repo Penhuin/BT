@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+<body>
+    {% block content %}
+    <br>
+    <div class="container">
+      <div class="box top-header">
+            <img class="box-image" src="static\css\logo.png" alt="Image description">
+           <h1 class="text-center mt-3">SURVIVING THE DIGITAL AGE</h1>
+      </div>
+      </div>
+    <div class="container">
+      <div class="box red-header">
+            <a><i class="fab fa-twitter m-3 my-icon" style="color: #c93315; font-size: 28px"></i></a>
+            <a><i class="fab fa-discord m-3 my-icon" style="color: #c93315; font-size: 28px;"></i></a>
+            <a><i class="fab fa-telegram m-3 my-icon" style="color: #c93315; font-size: 28px"></i></a>
+            <a><i class="fa-brands fa-medium m-3 my-icon" style="color: #c93315; font-size: 28px"></i></a>
+            <a><i class="fa-brands fa-youtube my-icon" style="color: #c93315; font-size: 28px; "></i></a>
+      </div>
+      </div>
+    <div class="box-container">
+		<div class="box-2 yellow-header left-box">
+            <h2 class="text-white m-3" id='test'>{{bio}}</h2>
+            <br>
+            <a href="" class="portfolio-project-btn m-3"> Contact me</a>
+		</div>
+		<div class="box-2 yellow-header right-box">
+                  
+		</div>
+		<div class="box yellow-header left-box">
+			<h1 class="text-center mt-4 yt-header">WATCH MY LATEST PLAY<img src="static\css\Screenshot_1027.png" width="30%"></h1>
+            <hr>
+			<p class="text-center yt-text">HERE YOU WILL LEARN ABOUT MY LATEST SURVIVAL KIT</p>
+            <iframe class="m-3 yt-vid"  src="https://www.youtube.com/embed/qVZvfdmwwOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>>
+            </iframe>
+		</div>
+		<div class="box yellow-header right-box">
+                  <img src="\static\css\Screenshot_1024.png" width="100%">
+                  <center><b><a class="stats-header">SUBSCRIBERS</a></b></center>
+                  <h1 class="text-center mt-3 stats-text">15,100 {{subs}}</h1>
+                  <center><b><a class="stats-header">TOTAL VIEWS</a></b></center>
+                  <h1 class="text-center mt-3 stats-text">1,123,456 {{total_views}}</h1>
+                  <center><b><a class="stats-header">VIDEO COUNT</a></b></center>
+                  <h1 class="text-center mt-3 stats-text">1,100 {{vid}}</h1>
+		</div>
+		<div class="box yellow-header full-width-box">
+            <img src="static\css\JoinMySquad - 1_PosterImage.png" width="100%">
+            <div class="box yellow-header full-width-box p-3">
+            {% for socials in socials %}
+            {% if socials.image_icon %}
+            <a><button class="socials-btn mt-3 mb-3 m-4"><img src="{{socials.image_icon.url}}" width="16%"> {{socials}}</a></button>
+            {%else%}
+            <a><button class="socials-btn mt-3 mb-3 m-4">{{socials}}</a></button>
+            {% endif %}
+            {%endfor%}
+            </div>
+	</div>
+    </div>
+    <div class="box-container mt-3">
+      <div class="box yellow-header full-width-box">
+            <h1 class="text-center mt-3" style="font-family: 'Armor Piercing', sans-serif; font-size: 45px;">DISCLAIMER</h1>
+            <div class="con-con " style="background-color: #dec7b0;">
+                  <h2 class="text-dark m-4 p-5" style="font-size: 1rem; font-family: 'Century Gothic', sans-serif; ">Please note that the videos we share are intended for educational and enterainment purposes only. Any techniques and ideas mentioned are not a guarantee of financial gain. This is not financial advice, and we cannot be held responsible for any financial decisions you make. Your success in applying the information shared in these videos will depnd on your hard work, experience, and knowledge. While we have take reasonable steps to ensure the accuracy of the information shared, we cannot guarantee that the websites mentioned are free from errors. Therfore, please do not rely solely on the information in our videos, and always do your own research.<br><center>Thank you for watching!</center></h2>
+            </div>
+      </div>
+      </div>
+      <script>
+      {% for bio in links %}
+      const myString = "{{bio}}";
+      let stringWithLineBreaks = "";
+      let count = 0;
+
+      for (let i = 0; i < myString.length; i++) {
+      const char = myString.charAt(i);
+      if (char !== '\n') {
+      count++;
+      if (count === 30) {
+            stringWithLineBreaks += char + "<br>";
+            count = 0;
+      } else {
+            stringWithLineBreaks += char;
+      }
+      } else {
+      stringWithLineBreaks += char;
+      count = 0;
+      }
+      }
+      document.getElementById('test').innerHTML = stringWithLineBreaks
+      {%endfor%}
+
+      </script>?
+    {% endblock content %}
+</body>

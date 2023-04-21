@@ -1,0 +1,305 @@
+body {
+    background-image: url(bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Blank River', sans-serif;
+    overflow-x: hidden;
+}
+
+p {
+    font-family: 'Blank River', sans-serif;
+    font-size: 1rem;
+}
+
+h1,h2,h3,h4 {
+    font-family: 'Blank River', sans-serif;
+    color: #ccc;
+}
+
+
+.portfolio-project-btn {
+    border: 5px solid #fff;
+    padding: 14px 29px;
+    font-family: 'Blank River', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.portfolio-project-btn:hover {
+    transition: 0.5s;
+    background-color: rgba(185, 28, 28, 0.836);
+    color: #fff;
+}
+
+.profile-description {
+    position: relative;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color:#fff;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+a:hover {
+    color: #000;
+}
+
+.nav-portfolio {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 1200px;
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+}
+
+.stats-header {
+    padding: 15px 30px;
+    font-family: 'Blank River', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    background-color: #EAB32A;
+    color: #000;
+}
+
+.nav-portfolio a {
+    float: left;
+    padding: 13px 16px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.items-right {
+    float: right;
+}
+
+.center-con {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color: #121212;
+}
+
+.box {
+    border: 5px solid #ccc;
+    flex-basis: calc(45% - 2px); /* 3 boxes per row with no margin */
+}
+
+.box-2 {
+    border: 5px solid #ccc;
+    flex-basis: calc(50%); /* 3 boxes per row with no margin */
+    height: 400px;
+}
+
+.box-2:nth-child(1) {
+    border-right: none;
+    border-bottom: none;
+}
+
+.box-2:nth-child(2) {
+    margin-top: -160px;
+    margin-left: -150px;
+    background-image: url(rsz_kenshiro_rain_after_effectssound_music_1_posterimage.png);
+    background-repeat: no-repeat;
+
+  }
+.box:nth-child(4) {
+    margin-top: -160px;
+  }
+
+.left-box {
+	flex: 1 0 calc(50% - 1px);
+}
+
+.right-box {
+	flex: 1 0 calc(50% - 1px);
+}
+
+.full-width-box {
+	flex: 1 0 calc(100% - 1px);
+}
+
+
+.yellow-header {
+	color: #fff;
+    font-family: 'Poppins';font-size: 22px;
+}
+
+.full-width-box {
+	flex-basis: calc(100% - 3px);
+}
+
+.socials-btn {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 14px 20px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    background-color: #121212;
+    color: #fff;
+    width: 250px; /* set the width of the button */
+
+}
+.socials-btn:hover {
+    transition: 0.5s;
+    border-color: #24c75a;
+    color: #fff;
+}
+
+  .socials-btn img {
+    display: inline-block;
+    margin-right: 10px; /* add some space between the image and the text */
+  }
+
+.container {
+    position: relative;
+}
+
+.red-header {
+    background-color: #121212;
+	width: 34%;
+    margin-left: 133px;
+}
+.my-icon {
+    text-shadow: 1px 1px 29px white;
+}
+.top-header  {
+    background-color: #121212;
+	width: 65%;
+    font-size: 70px;
+    margin-left: 43px;
+}
+
+  .top-header img {
+    position: absolute;
+    top: -130px;
+    left: -200px;
+  }
+.footer {
+    margin-top: auto;
+    background-color: #dec7b0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+
+}
+.con-con {
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+}
+.footer-icons {
+    margin-left: 600px;
+    display:inline;
+}
+.yt-vid {
+    width: 450px;
+    height: 275px;
+    text-align: center;
+}
+.stats-text {
+    font-size: 50px;
+}
+.yt-text {
+    font-size: 30px;
+}
+.yt-header {
+    font-family: 'Armor Piercing', sans-serif;
+}
+@media screen and (max-width: 1000px) {
+    h1 {
+        font-size: 28px;
+    }
+    .yellow-header {
+    text-align: center;
+    }
+    .box:nth-child(4) {
+        margin-top: 0px;
+    }
+    .box-2:nth-child(2) {
+        margin-top: 00px;
+        margin-left: 0px;
+        background-image: url(rsz_kenshiro_rain_after_effectssound_music_1_posterimage.png);
+        background-repeat: no-repeat;
+    }
+    .red-header {
+        background-color: #121212;
+        width: 70%;
+        margin-left: 133px;
+    }
+    .footer-icons {
+        font-size: 20px;
+        margin-left: 100px;
+        display:inline;
+    }
+    .yt-vid {
+        width: 650px;
+        height: 375px;
+        text-align: center;
+    }
+    .yt-header {
+        font-size:50px;
+        font-family: 'Armor Piercing', sans-serif;
+    }
+}
+
+    /* @media screen and (max-width: 576px) {
+    .portfolio-project-btn {
+    font-size: 24px;
+    padding: 10px 20px;
+    }
+    .stats-header {
+    font-size: 32px;
+    padding: 10px 20px;
+    }
+    .yellow-header {
+    font-size: 18px;
+    }
+    .socials-btn {
+    font-size: 24px;
+    padding: 10px 20px;
+    width: 100%;
+    }
+    .top-header {
+    font-size: 50px;
+    margin-left: 0px;
+    width: 100%;
+    text-align: center;
+    }
+    .red-header {
+    width: 100%;
+    margin-left: 0px;
+    }
+    .my-icon {
+    font-size: 30px;
+    }
+    } */
+    
+
+/* .footer {
+    margin:0 auto;
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    position: fixed;
+    background-color: rgb(187, 134, 252, .3);
+    bottom: 0px;
+} * /
