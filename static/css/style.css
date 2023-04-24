@@ -207,7 +207,7 @@ a:hover {
     text-align: center;
 }
 .footer-icons {
-    margin-left: 600px;
+    margin-left: 450px;
     display:inline;
 }
 .yt-vid {
@@ -235,7 +235,7 @@ a:hover {
         margin-top: 0px;
     }
     .box-2:nth-child(2) {
-        margin-top: 00px;
+        margin-top: 0px;
         margin-left: 0px;
         background-image: url(rsz_kenshiro_rain_after_effectssound_music_1_posterimage.png);
         background-repeat: no-repeat;
@@ -261,28 +261,27 @@ a:hover {
     }
 }
 
-    /* @media screen and (max-width: 576px) {
+@media only screen and (max-width: 844px) {
     .portfolio-project-btn {
     font-size: 24px;
     padding: 10px 20px;
     }
     .stats-header {
-    font-size: 32px;
+    font-size: 30px;
     padding: 10px 20px;
     }
     .yellow-header {
     font-size: 18px;
     }
-    .socials-btn {
-    font-size: 24px;
-    padding: 10px 20px;
-    width: 100%;
-    }
+
     .top-header {
-    font-size: 50px;
+    font-size: 40px;
     margin-left: 0px;
     width: 100%;
     text-align: center;
+    }
+    .top-header h1 {
+        font-size: 33px;
     }
     .red-header {
     width: 100%;
@@ -291,7 +290,44 @@ a:hover {
     .my-icon {
     font-size: 30px;
     }
-    } */
+    iframe {
+        width: 350px !important;
+        height: 200px !important;
+    }
+    .box-image {
+        width: 70%;
+        margin-left: 260px;
+        text-align: center;
+        margin-top: -35px;
+    }
+    .box-2:nth-child(2) {
+        margin-top: 0px;
+        margin-left: 0px;
+        background-image: url(rsz_kenshiro_rain_after_effectssound_music_1_posterimage.png);
+        background-repeat: no-repeat;
+    }
+    .box-2:nth-child(2) {
+        margin-top: 0px;
+        margin-left: 0px;
+        background-image: url(rsz_kenshiro_rain_after_effectssound_music_1_posterimage.png);
+        background-repeat: no-repeat;
+    }
+    .right-box {
+        flex: 1 0 calc(51% - 1px);
+    }
+    .box-2:nth-child(1) {
+        border-right: 5px solid #ccc;
+        border-bottom: 5px solid #ccc;
+    }
+    .container {
+        padding-right: var(--bs-gutter-x,0rem);
+        padding-left: var(--bs-gutter-x,0rem);
+    }
+    .footer-icons {
+        margin-left:0px;
+        display:flex;
+    }
+} 
     
 
 /* .footer {
