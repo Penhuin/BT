@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mza*#*#)cqo9_ml_2g+dmssn6o#m4wdgmym3he+-vc72roj-ow
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.178','127.0.0.1']
+ALLOWED_HOSTS = ['192.168.0.178','127.0.0.1','penhuin.pythonanywhere.com']
 
 
 # Application definition
@@ -66,7 +66,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'user_profile.context_processors.user_details',
                 'user_profile.context_processors.user_socials',
-                # 'user_profile.context_processors.user_stats',
+                'user_profile.context_processors.user_stats',
             ],
         },
     },
