@@ -24,12 +24,12 @@ class UserSocials(models.Model):
     
 class UserYT(models.Model):
 
-    video_count = models.TextField(blank=True)
-    video_views = models.TextField(blank=True)
-    subscribers = models.TextField(blank=True)
-    recent_video = models.TextField(blank=True)
-    update = models.BooleanField(blank=True)
-    
+    video_count = models.TextField(blank=True, default=0)
+    video_views = models.TextField(blank=True, default=0)
+    subscribers = models.TextField(blank=True,default=0)
+    recent_video = models.TextField(blank=True, default=0)
+    update = models.BooleanField(blank=True, default=False)
+
     class Meta:  
         verbose_name_plural = 'YouTube Statistics'
 
