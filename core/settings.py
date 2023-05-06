@@ -66,7 +66,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'user_profile.context_processors.user_details',
                 'user_profile.context_processors.user_socials',
-                'user_profile.context_processors.user_stats',
+                # 'user_profile.context_processors.user_stats',
             ],
         },
     },
