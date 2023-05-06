@@ -32,8 +32,10 @@
 			<h1 class="text-center mt-4 yt-header">WATCH MY LATEST PLAY<img src="static\css\Screenshot_1027.png" width="30%"></h1>
             <hr>
 			<p class="text-center yt-text">HERE YOU WILL LEARN ABOUT MY LATEST SURVIVAL KIT</p>
-            <iframe class="m-3 yt-vid"  src="https://www.youtube.com/embed/{{video_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>>
+                  {% for i in stats %}
+            <iframe class="m-3 yt-vid"  src="https://www.youtube.com/embed/{{i.recent_video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>>
             </iframe>
+            {%endfor%}
 		</div>
 		<div class="box yellow-header right-box">
                   
