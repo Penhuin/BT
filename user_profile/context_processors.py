@@ -32,8 +32,7 @@ def user_stats(request):
     try:
         if now.hour % 2 == 0 and now.minute == 0 and now.second <= 60 or request.user.is_authenticated:
             stats = UserYT.objects.all()
-            if stats == None:
-               UserYT.objects.all().update(video_count = 0, recent_video=0, subscribers=0 , video_views=0, update=False)
+            UserYT.objects.all().update(video_count = 0, recent_video=0, subscribers=0 , video_views=0, update=False)
             UserYT.objects.all().update(update=True)
             x = UserYT.objects.all()
             for i in x: 
