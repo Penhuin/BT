@@ -22,47 +22,49 @@ def user_socials(request):
     print(socials)
     return dict(socials=socials)
 
-# def user_stats(request):
-#     # video_count = models.TextField(blank=True)
-#     # video_views = models.TextField(blank=True)
-#     # subscribers = models.TextField(blank=True)
-#     # recent_video = models.TextField(blank=True)
-#     now = datetime.datetime.now()
+def user_stats(request):
+    # video_count = models.TextField(blank=True)
+    # video_views = models.TextField(blank=True)
+    # subscribers = models.TextField(blank=True)
+    # recent_video = models.TextField(blank=True)
+    now = datetime.datetime.now()
 
-#     try:
-#         if now.hour % 2 == 0 and now.minute == 0 and now.second <= 60 or request.user.is_authenticated:
-#             stats = UserYT.objects.all()
-#             UserYT.objects.all().update(update=True)
-#             x = UserYT.objects.all()
-#             for i in x: 
-#                 if i.update:
-#                     youtube = build('youtube', 'v3', 
-#                                 developerKey=API_KEY)
-#                     ch_request = youtube.channels().list(
-#                     part='statistics',
-#                     id='UCW2kIwAquQA1aj28X3iStYA')
-#                     ch_response = ch_request.execute()
+    try:
+        if now.hour % 2 == 0 and now.minute == 0 and now.second <= 60 or request.user.is_authenticated:
+            stats = UserYT.objects.all()
+            if stats == None:
+               UserYT.objects.all().update(video_count = 0, recent_video=0, subscribers=0 , video_views=0, update=False)
+            UserYT.objects.all().update(update=True)
+            x = UserYT.objects.all()
+            for i in x: 
+                if i.update:
+                    youtube = build('youtube', 'v3', 
+                                developerKey=API_KEY)
+                    ch_request = youtube.channels().list(
+                    part='statistics',
+                    id='UCW2kIwAquQA1aj28X3iStYA')
+                    ch_response = ch_request.execute()
                 
-#                     sub = int(ch_response['items'][0]['statistics']['subscriberCount'])
-#                     vid = int(ch_response['items'][0]['statistics']['videoCount'])
-#                     views = int(ch_response['items'][0]['statistics']['viewCount'])
-#                     search_response = youtube.search().list(
-#                         part='id',
-#                         channelId="UCW2kIwAquQA1aj28X3iStYA",
-#                         order='date',
-#                         type='video',
-#                     ).execute()
-#                     video_id = search_response['items'][0]['id']['videoId']
-#                     UserYT.objects.all().update(video_count = vid, recent_video=video_id, subscribers=sub , video_views=views, update=False)
-#                     stats = UserYT.objects.all()
-#                     print("h2222")
-#                     return dict(stats=stats)
-#         else:
-#             print("hi")
-#             stats = UserYT.objects.all()
-#             return dict(stats=stats)
-#     except Exception:
-#         print("hi")
-#         stats = UserYT.objects.all()
-#         return dict(stats=stats)
+                    sub = int(ch_response['items'][0]['statistics']['subscriberCount'])
+                    vid = int(ch_response['items'][0]['statistics']['videoCount'])
+                    views = int(ch_response['items'][0]['statistics']['viewCount'])
+                    search_response = youtube.search().list(
+                        part='id',
+                        channelId="UCW2kIwAquQA1aj28X3iStYA",
+                        order='date',
+                        type='video',
+                    ).execute()
+                    video_id = search_response['items'][0]['id']['videoId']
+                    UserYT.objects.all().update(video_count = vid, recent_video=video_id, subscribers=sub , video_views=views, update=False)
+                    stats = UserYT.objects.all()
+                    print("h2222")
+                    return dict(stats=stats)
+        else:
+            print("hi")
+            stats = UserYT.objects.all()
+            return dict(stats=stats)
+    except Exception:
+        print("hi")
+        stats = UserYT.objects.all()
+        return dict(stats=stats)
         
