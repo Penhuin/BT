@@ -21,3 +21,18 @@ class UserSocials(models.Model):
         verbose_name_plural = 'Edit Socials'
     def __str__(self):
         return self.button_name
+    
+class UserYT(models.Model):
+
+    video_count = models.TextField(blank=True)
+    video_views = models.TextField(blank=True)
+    subscribers = models.TextField(blank=True)
+    recent_video = models.TextField(blank=True)
+    update = models.BooleanField(blank=True)
+    
+    class Meta:  
+        verbose_name_plural = 'YouTube Statistics'
+
+    def __str__(self):
+        return self.subscribers
+

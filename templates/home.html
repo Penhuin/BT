@@ -21,7 +21,7 @@
       </div>
     <div class="box-container">
 		<div class="box-2 yellow-header left-box">
-            <h2 class="text-white m-3" id='test'>{{bio}}</h2>
+            <h5 class="text-white m-3" id='test'>{{bio|safe|escape}}</h5>
             <br>
             <a href="" class="portfolio-project-btn m-3"> Contact me</a>
 		</div>
@@ -36,22 +36,25 @@
             </iframe>
 		</div>
 		<div class="box yellow-header right-box">
+                  
                   <img src="\static\css\Screenshot_1024.png" width="100%">
+                  {% for i in stats %}
                   <center><b><a class="stats-header">SUBSCRIBERS</a></b></center>
-                  <h1 class="text-center mt-3 stats-text">{{subs}}</h1>
+                  <h1 class="text-center mt-3 stats-text">{{i.subscribers}}</h1>
                   <center><b><a class="stats-header">TOTAL VIEWS</a></b></center>
-                  <h1 class="text-center mt-3 stats-text">{{total_views}}</h1>
+                  <h1 class="text-center mt-3 stats-text">{{i.video_views}}</h1>
                   <center><b><a class="stats-header">VIDEO COUNT</a></b></center>
-                  <h1 class="text-center mt-3 stats-text">{{vid}}</h1>
+                  <h1 class="text-center mt-3 stats-text">{{i.video_count}}</h1>
+                  {%endfor%}
 		</div>
 		<div class="box yellow-header full-width-box">
             <img src="static\css\JoinMySquad - 1_PosterImage.png" width="100%">
             <div class="box yellow-header full-width-box p-3">
             {% for socials in socials %}
             {% if socials.image_icon %}
-            <a><button class="socials-btn mt-3 mb-3 m-4"><img src="{{socials.image_icon.url}}" width="16%"> {{socials}}</a></button>
+            <a href="{{socials.button_link}}"><button class="socials-btn mt-3 mb-3 m-4"><img src="{{socials.image_icon.url}}" width="16%"> {{socials}}</a></button>
             {%else%}
-            <a><button class="socials-btn mt-3 mb-3 m-4">{{socials}}</a></button>
+            <a href="{{socials.button_link}}"><button class="socials-btn mt-3 mb-3 m-4">{{socials}}</a></button>
             {% endif %}
             {%endfor%}
             </div>
@@ -67,7 +70,7 @@
       </div>
       <script>
       {% for bio in links %}
-      const myString = "{{bio}}";
+      const myString = "{{bio|linebreaksbr|safe}}";
       let stringWithLineBreaks = "";
       let count = 0;
 
@@ -75,7 +78,7 @@
       const char = myString.charAt(i);
       if (char !== '\n') {
       count++;
-      if (count === 30) {
+      if (count === 40) {
             stringWithLineBreaks += char + "<br>";
             count = 0;
       } else {
