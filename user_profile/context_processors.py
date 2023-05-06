@@ -34,30 +34,27 @@ def user_stats(request):
             stats = UserYT.objects.all()
             UserYT.objects.all().update(video_count = 0, recent_video=0, subscribers=0 , video_views=0, update=False)
             UserYT.objects.all().update(update=True)
-            x = UserYT.objects.all()
-            for i in x: 
-                if i.update:
-                    youtube = build('youtube', 'v3', 
-                                developerKey=API_KEY)
-                    ch_request = youtube.channels().list(
-                    part='statistics',
-                    id='UCW2kIwAquQA1aj28X3iStYA')
-                    ch_response = ch_request.execute()
-                
-                    sub = int(ch_response['items'][0]['statistics']['subscriberCount'])
-                    vid = int(ch_response['items'][0]['statistics']['videoCount'])
-                    views = int(ch_response['items'][0]['statistics']['viewCount'])
-                    search_response = youtube.search().list(
+            youtube = build('youtube', 'v3', 
+                                    developerKey=API_KEY)
+            ch_request = youtube.channels().list(
+            part='statistics',
+            id='UCW2kIwAquQA1aj28X3iStYA')
+            ch_response = ch_request.execute()
+                    
+            sub = int(ch_response['items'][0]['statistics']['subscriberCount'])
+            vid = int(ch_response['items'][0]['statistics']['videoCount'])
+            views = int(ch_response['items'][0]['statistics']['viewCount'])
+            search_response = youtube.search().list(
                         part='id',
-                        channelId="UCW2kIwAquQA1aj28X3iStYA",
-                        order='date',
-                        type='video',
-                    ).execute()
-                    video_id = search_response['items'][0]['id']['videoId']
-                    UserYT.objects.all().update(video_count = vid, recent_video=video_id, subscribers=sub , video_views=views, update=False)
-                    stats = UserYT.objects.all()
-                    print("h2222")
-                    return dict(stats=stats)
+                            channelId="UCW2kIwAquQA1aj28X3iStYA",
+                            order='date',
+                            type='video',
+                        ).execute()
+            video_id = search_response['items'][0]['id']['videoId']
+            UserYT.objects.all().update(video_count = vid, recent_video=video_id, subscribers=sub , video_views=views, update=False)
+            stats = UserYT.objects.all()
+            print("h2222")
+            return dict(stats=stats)
         else:
             print("hi")
             stats = UserYT.objects.all()
