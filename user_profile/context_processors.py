@@ -6,7 +6,6 @@ from youtubesearchpython import *
 import json
 import urllib.request as urllib
 import datetime 
-import schedule
 import time 
 import random
 
